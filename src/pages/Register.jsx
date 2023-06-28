@@ -1,16 +1,22 @@
 import React from 'react';
+import Add from "../images/gallery.png"
 
 const Register = () => {
   return (
     <div className='formContainer'>
         <div className='formWrapper'>
-            <span className="logo">Thath Chat</span>
-            <span className="title">Register</span>
+            <span className="logo">Thath Chat</span><br />
+            <span className="title">Register</span><br />
             <form>
-                <input type="text" placeholder='display name'/>
-                <input type="email" placeholder='email'/>
-                <input type="password" placeholder='password'/>
-                <input type="file" />
+                <input type="text" placeholder='Display name'/>
+                <input type="email" placeholder='Email'/>
+                <input type="password" placeholder='Password'/>
+                <input style={{display:"none"}} type="file" id="file"/>
+
+                <label htmlFor="file">
+                  <img src={Add} alt="" />
+                  <span>Add an avatar</span>
+                </label>
                 <button>Sign Up</button>
             </form>
             <p>Do you have an account? Login</p>
