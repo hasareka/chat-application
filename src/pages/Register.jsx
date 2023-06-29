@@ -1,13 +1,34 @@
 import React from 'react';
 import Add from "../images/gallery.png"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../firebase"
 
 const Register = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const displayName = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+    const file = e.target[3].files[0];
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+      const user = userCredential.user;
+      // ... you can use user object here
+    } catch(error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // .. handle error here
+    }
+  }
+
   return (
     <div className='formContainer'>
         <div className='formWrapper'>
             <span className="logo">Thath Chat</span><br />
             <span className="title">Register</span><br />
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='Display name'/>
                 <input type="email" placeholder='Email'/>
                 <input type="password" placeholder='Password'/>
