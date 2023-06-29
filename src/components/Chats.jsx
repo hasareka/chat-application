@@ -1,8 +1,37 @@
 import React from 'react'
 
-function Chats() {
+const Chats = () => {
   return (
-    <div>Chats</div>
+    <div className="chats">
+        <div className="userChat">
+            <img src="" alt="" />
+            <div className="userChatInfo">
+                <span>Jane</span>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div className="userChat">
+            <img src="" alt="" />
+            <div className="userChatInfo">
+                <span>Jane</span>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div className="userChat">
+            <img src="" alt="" />
+            <div className="userChatInfo">
+                <span>Jane</span>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div className="userChat">
+            <img src="" alt="" />
+            <div className="userChatInfo">
+                <span>Jane</span>
+                <p>Hello</p>
+            </div>
+        </div>
+    </div>
   )
 }
 
